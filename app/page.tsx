@@ -94,10 +94,10 @@ export default function Home() {
     const next = [...history, km].slice(-10); setHistory(next);
     const nextAverage = Math.round(next.reduce((total, value) => total + value, 0) / next.length);
     if (next.length === 10) {
-      const isNewRecord = bestAverage === null || nextAverage < bestAverage;
+      const isNewRecord = bestAverage !== null && nextAverage < bestAverage;
       if (nextAverage < 50 && !thresholdReached) { setMilestone("threshold"); setThresholdReached(true); localStorage.setItem("suomi-under-50-rewarded", "yes"); }
       else if (isNewRecord) setMilestone("record");
-      if (isNewRecord) { setBestAverage(nextAverage); localStorage.setItem("suomi-best-average-10", String(nextAverage)); }
+      if (bestAverage === null || isNewRecord) { setBestAverage(nextAverage); localStorage.setItem("suomi-best-average-10", String(nextAverage)); }
     }
   }
 

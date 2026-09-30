@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Suomi Spot — Find the city",
-  description: "A playful geography game for learning Finland's largest cities.",
+  title: "Suomi Spot — Etsi kaupunki",
+  description: "Leikkimielinen maantietopeli Suomen kaupunkien oppimiseen.",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",

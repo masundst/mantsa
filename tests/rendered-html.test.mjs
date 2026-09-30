@@ -15,11 +15,10 @@ test("server-renders the Suomi Spot game", async () => {
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
   const html = await response.text();
-  assert.match(html, /<title>Suomi Spot — Find the city<\/title>/i);
-  assert.match(html, /HOW WELL DO YOU KNOW FINLAND/);
-  assert.match(html, /Find the city/);
-  assert.match(html, /Tap anywhere on the map/);
-  assert.match(html, /LAST 20 AVG/);
-  assert.match(html, /BEST SCORE/);
+  assert.match(html, /<title>Suomi Spot — Etsi kaupunki<\/title>/i);
+  assert.match(html, /Näytä kaikki/);
+  assert.match(html, /VIIMEISIN/);
+  assert.match(html, /KESKIARVO/);
+  assert.match(html, /PARAS/);
   assert.doesNotMatch(html, /Your site is taking shape|codex-preview|react-loading-skeleton/i);
 });
